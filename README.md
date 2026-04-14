@@ -1,4 +1,4 @@
-# Enterprise Employee Policy Search (RAG) - End-to-End Design Document
+# Enterprise Employee Policy Search (RAG)
 
 ## 1. Topic Overview
 This project is a Generative AI-powered enterprise assistant that helps employees ask natural-language questions about company policies (leave, insurance, HR guidelines) and receive accurate, citation-backed answers.

@@ -1,0 +1,1 @@
+DEFAULT_POLICY_TYPE = "general"

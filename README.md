@@ -104,39 +104,11 @@ The API will be available at `http://localhost:8000`
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
 
-3. Start the frontend (React 19 + Vite):
+3. Start the frontend:
 ```bash
 cd frontend
 npm install
 npm run dev
-```
-
-### Common Commands
-
-- **Health check:**
-```bash
-curl http://localhost:8000/health
-```
-
-- **Upload a policy document:**
-```bash
-curl -X POST http://localhost:8000/documents/upload \
-  -H "Authorization: Bearer <token>" \
-  -F "file=@policy.pdf"
-```
-
-- **Query the system:**
-```bash
-curl -X POST http://localhost:8000/query \
-  -H "Authorization: Bearer <token>" \
-  -H "Content-Type: application/json" \
-  -d '{"question": "How many casual leaves can I take?"}'
-```
-
-- **List ingested documents:**
-```bash
-curl http://localhost:8000/documents \
-  -H "Authorization: Bearer <token>"
 ```
 
 ## 5. High-Level Architecture

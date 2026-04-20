@@ -32,17 +32,5 @@ services:
     depends_on:
       - db
 
-  cli:
-    image: python:3.11-slim
-    depends_on:
-      db:
-        condition: service_healthy
-    entrypoint: /bin/sh -c
-    command: >
-      "pip install --no-cache-dir pgcli &&
-       pgcli postgresql://appuser:apppass@db:5432/appdb"
-    tty: true
-    stdin_open: true
-
 volumes:
   pgdata:

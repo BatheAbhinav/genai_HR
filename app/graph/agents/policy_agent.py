@@ -110,7 +110,7 @@ def make_policy_agent_node(policy_type: str):
 
         # --- Evidence grading ---
         confidence = score_evidence(rows)
-        if confidence < 0.45 or not rows:
+        if confidence <= 0.5 or not rows:
             # DB didn't have enough — fall back to a domain-scoped web search.
             search_query = f"{policy_type} policy workplace {question}"
             try:

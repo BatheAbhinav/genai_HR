@@ -4,8 +4,12 @@ import { queryPolicy } from '../api';
 const POLICY_TYPES = [
   { value: '', label: 'All policies' },
   { value: 'leave', label: 'Leave' },
-  { value: 'health_insurance', label: 'Health Insurance' },
-  { value: 'remote_work', label: 'Remote Work' },
+  { value: 'insurance', label: 'Insurance' },
+  { value: 'hr-guidelines', label: 'HR Guidelines' },
+  { value: 'compensation', label: 'Compensation' },
+  { value: 'remote-work', label: 'Remote Work' },
+  { value: 'labour-law', label: 'Labour Law' },
+  { value: 'general', label: 'General' },
 ];
 
 export default function QueryPage() {

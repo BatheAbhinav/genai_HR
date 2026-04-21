@@ -109,7 +109,7 @@ def semantic_search(
     base_sql += " ORDER BY c.embedding <=> CAST(:query_embedding AS vector) LIMIT :top_k"
 
     # Note: Ensure query_embedding is passed as a string/list that pgvector understands
-    params = {"query_embedding": query_embedding, "top_k": top_k}
+    params = {"query_embedding": str(query_embedding), "top_k": top_k}
     if policy_type:
         params["policy_type"] = policy_type
 

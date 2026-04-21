@@ -2,12 +2,20 @@ import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { uploadDocument } from '../api';
 
-const POLICY_TYPES = ['leave', 'health_insurance', 'remote_work'];
+const POLICY_TYPES = [
+  { value: 'leave', label: 'Leave' },
+  { value: 'insurance', label: 'Insurance' },
+  { value: 'hr-guidelines', label: 'HR Guidelines' },
+  { value: 'compensation', label: 'Compensation' },
+  { value: 'remote-work', label: 'Remote Work' },
+  { value: 'labour-law', label: 'Labour Law' },
+  { value: 'general', label: 'General' },
+];
 
 export default function UploadPage() {
   const { auth } = useAuth();
   const [title, setTitle] = useState('');
-  const [policyType, setPolicyType] = useState('leave');
+  const [policyType, setPolicyType] = useState('leave');  // default to first option
   const [version, setVersion] = useState('v1');
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -65,7 +73,7 @@ export default function UploadPage() {
           Policy Type
           <select value={policyType} onChange={(e) => setPolicyType(e.target.value)}>
             {POLICY_TYPES.map((t) => (
-              <option key={t} value={t}>{t.replace('_', ' ')}</option>
+              <option key={t.value} value={t.value}>{t.label}</option>
             ))}
           </select>
         </label>
